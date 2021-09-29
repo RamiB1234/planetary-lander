@@ -38,4 +38,13 @@ public class Lander : MonoBehaviour
 
         GetComponent<Rigidbody2D>().AddForce(new Vector2(horizontalMovement, verticalMovement));
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.transform.tag== "Meteoroid")
+        {
+            Destroy(col.gameObject);
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeBehavior>().TriggerShake();
+        }
+    }
 }
