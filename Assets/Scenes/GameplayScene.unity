@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 136888912}
   m_Layer: 5
   m_Name: DamageBar
-  m_TagString: Untagged
+  m_TagString: DamageBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,9 +338,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 10
+  m_WholeNumbers: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1969,8 +1969,8 @@ GameObject:
   - component: {fileID: 1648117280}
   - component: {fileID: 1648117283}
   - component: {fileID: 1648117284}
-  - component: {fileID: 1648117282}
   - component: {fileID: 1648117285}
+  - component: {fileID: 1648117282}
   m_Layer: 0
   m_Name: Lander
   m_TagString: Untagged
@@ -2055,6 +2055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  health: 10
 --- !u!50 &1648117283
 Rigidbody2D:
   serializedVersion: 4

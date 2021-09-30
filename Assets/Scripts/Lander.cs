@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lander : MonoBehaviour
 {
     public float speed = 1f;
+    public int health = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.FindGameObjectWithTag("DamageBar").GetComponent<Slider>().maxValue = health;
+        GameObject.FindGameObjectWithTag("DamageBar").GetComponent<Slider>().value = health;
     }
 
     // Update is called once per frame
@@ -45,6 +48,8 @@ public class Lander : MonoBehaviour
         {
             Destroy(col.gameObject);
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeBehavior>().TriggerShake();
+            health--;
+            GameObject.FindGameObjectWithTag("DamageBar").GetComponent<Slider>().value= health;
         }
     }
 }
