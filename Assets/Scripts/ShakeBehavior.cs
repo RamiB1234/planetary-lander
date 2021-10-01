@@ -33,7 +33,7 @@ public class ShakeBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shakeDuration > 0)
+        if (shakeDuration > 0 && GameManager.GM.missionFailed==false)
         {
             transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
 

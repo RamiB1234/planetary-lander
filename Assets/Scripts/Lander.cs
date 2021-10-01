@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Lander : MonoBehaviour
@@ -50,6 +48,11 @@ public class Lander : MonoBehaviour
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeBehavior>().TriggerShake();
             health--;
             GameObject.FindGameObjectWithTag("DamageBar").GetComponent<Slider>().value= health;
+
+            if(health==0)
+            {
+                GameManager.GM.missionFailed = true;
+            }
         }
     }
 }
