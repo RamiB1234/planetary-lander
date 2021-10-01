@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     public bool missionFailed = false;
     public GameObject missionFailedMenu;
     public GameObject howToPlayMenu;
+    public AudioSource radioSFX1;
+    public AudioSource radioSFX2;
 
     void Awake()
     {
@@ -24,6 +27,28 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             howToPlayMenu.SetActive(true);
+        }
+        StartCoroutine(PlayRandomRadioSFX());
+    }
+
+    IEnumerator PlayRandomRadioSFX()
+    {
+        while (missionFailed == false)
+        {
+            yield return new WaitForSeconds(3);
+
+            if (gameStarted && radioSFX1.isPlaying == false && radioSFX2.isPlaying == false)
+            {
+                var rand = UnityEngine.Random.Range(0, 2);
+                if (rand == 1)
+                {
+                    radioSFX1.Play();
+                }
+                else
+                {
+                    radioSFX2.Play();
+                }
+            }
         }
     }
 
