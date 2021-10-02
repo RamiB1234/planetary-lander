@@ -10,7 +10,7 @@ public class Meteoroid : MonoBehaviour
     {
         transform.Rotate(0.0f, 0.0f, Random.Range(0.0f, 360.0f));
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, velocity);
-        GetComponent<Rigidbody2D>().angularVelocity = Random.value * 20;
+        GetComponent<Rigidbody2D>().angularVelocity = Random.value * 50;
 
         // Tilt
         Vector3 euler = transform.localEulerAngles;

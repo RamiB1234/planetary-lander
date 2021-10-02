@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Meteoroid
   - DamageBar
+  - End
+  - Lander
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - Meteoroid
   - Boundary
-  - 
-  - 
+  - Surface
+  - End
   - 
   - 
   - 
