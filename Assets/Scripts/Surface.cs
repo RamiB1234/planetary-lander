@@ -18,7 +18,6 @@ public class Surface : MonoBehaviour
     {
         if (col.transform.tag == "End")
         {
-            GetComponent<Rigidbody2D>().simulated = false;
             GameObject.FindGameObjectWithTag("Lander").GetComponent<Lander>().autoPilot = true;
         }
     }
